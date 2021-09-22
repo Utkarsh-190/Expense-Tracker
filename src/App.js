@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpenses/NewExpense";
 
 function App() {
   const expenses = [
@@ -28,9 +29,17 @@ function App() {
     },
   ];
 
+  const onAddExpenseHandler = (expense) => {
+    const expenseData = {
+      ...expense,
+      id: Math.random().toString(),
+    };
+    console.log(expenseData);
+  };
+
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense onAddExpense={onAddExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
