@@ -11,7 +11,9 @@ function Expenses(props) {
     setFilterData(enteredFilteData);
   };
 
-  const filteredExpenses = props.expenses;
+  const filteredExpenses = props.expenses.filter((expense) => {
+    return expense.date.getFullYear() == filterData;
+  });
 
   let expensesContent = <p>No expense available for this year</p>;
   if (filteredExpenses.length > 0) {
