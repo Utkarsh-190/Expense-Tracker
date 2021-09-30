@@ -25,7 +25,7 @@ function ExpenseForm(props) {
     event.preventDefault();
     const expense = {
       title: title,
-      amount: amount,
+      amount: amount, // TODO: change {amount:amount} to {amount:+amount} to convert amount from string to number
       date: new Date(date),
     };
 
